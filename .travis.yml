@@ -32,4 +32,12 @@ install:
   - delocate-wheel dist/*.whl # copies library dependencies into wheel
   - delocate-addplat --rm-orig -x 10_9 -x 10_10 dist/*.whl
   - pip install dist/*.whl
-  - cd ..
+before_deploy:
+  - cd dist
+deploy:
+  provider: bintray
+  file: *.whl
+  user: kozo2
+  key: 0e02f343d46971b18612f41c000f719bd820144b
+  dry-run: true
+  
