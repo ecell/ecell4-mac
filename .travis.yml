@@ -5,6 +5,7 @@ env:
   - REPO_DIR=ecell4
   matrix:
   - VERSION=2.7.10
+  - VERSION=3.3.5
   - VERSION=3.4.3
   - VERSION=3.5.0
 install:
@@ -40,4 +41,3 @@ deploy:
   user: kozo2
   key: 0e02f343d46971b18612f41c000f719bd820144b
   dry-run: true
-  
