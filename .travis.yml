@@ -19,8 +19,8 @@ install:
   - brew update
   - brew install gsl
   - brew install homebrew/science/hdf5
-  - cd $REPO_DIR
   - cp CMakeLists.txt $REPO_DIR/ecell4/core
+  - cd $REPO_DIR
   - cmake .
   - make BesselTables
   - cd ..
