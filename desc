@@ -56,7 +56,7 @@
         [
         {"includePattern": "build/bin(.*)*/(.*\.gem)", "excludePattern": ".*/do-not-deploy/.*", "uploadPattern": "gems/$2"},
         {"includePattern": "build/docs/(.*)", "uploadPattern": "docs/$1"},
-        {"includePattern": "dist/(.*)", "uploadPattern": "dist/$1"}
+        {"includePattern": "ecell4/python/dist/(.*)", "uploadPattern": "dist/$1"}
         ],
     "publish": true
 }
