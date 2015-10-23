@@ -1,0 +1,34 @@
+language:
+- objective-c
+env:
+  global:
+  - REPO_DIR=ecell4
+  matrix:
+  - VERSION=2.7.10
+  - VERSION=3.3.5
+  - VERSION=3.4.3
+  - VERSION=3.5.0
+install:
+  - source terryfy/travis_tools.sh
+  - export CC=clang
+  - export CXX=clang++
+  - get_python_environment macpython $VERSION venv
+  # Update to latest wheel package for Python 3.5
+  - pip install -U wheel
+  - pip install delocate
+  - pip install cython
+  - brew install cmake
+  - brew install gsl
+  - brew install boost
+  - brew install homebrew/science/hdf5
+  - cd $REPO_DIR
+  - cmake .
+  - make BesselTables
+  - cd ..
+  - cd $REPO_DIR/python
+  - python setup.py bdist_wheel
+  - delocate-listdeps dist/*.whl # lists library dependencies
+  - delocate-wheel dist/*.whl # copies library dependencies into wheel
+  - delocate-addplat --rm-orig -x 10_9 -x 10_10 dist/*.whl
+  - pip install dist/*.whl
+  - cd ..
