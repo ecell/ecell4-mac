@@ -25,6 +25,7 @@ install:
   - cmake .
   - make BesselTables
   - cd ..
+  - cp config.h $REPO_DIR/ecell4/core
   - cd $REPO_DIR/python
   - python setup.py bdist_wheel
   - delocate-listdeps dist/*.whl # lists library dependencies
