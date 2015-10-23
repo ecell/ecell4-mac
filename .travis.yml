@@ -37,7 +37,7 @@ before_deploy:
   - cd dist
 deploy:
   provider: bintray
-  file: "*.whl"
+  file: "desc"
   user: kozo2
   key: 0e02f343d46971b18612f41c000f719bd820144b
   dry-run: true
