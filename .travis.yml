@@ -17,6 +17,7 @@ install:
   - pip install delocate
   - pip install cython
   - brew update
+  - brew upgrade boost
   - brew install gsl
   - brew install homebrew/science/hdf5
   - cd $REPO_DIR
