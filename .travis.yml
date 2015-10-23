@@ -17,7 +17,6 @@ install:
   - pip install delocate
   - pip install cython
   - brew update
-  - brew install cmake
   - brew install gsl
   - brew install boost
   - brew install homebrew/science/hdf5
