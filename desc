@@ -4,7 +4,7 @@
        fields are mandatory. */
 
     "package": {
-        "name": "hoge", // Bintray package name
+        "name": "ecell4-wheels", // Bintray package name
         "repo": "generic", // Bintray repository name
         "subject": "kozo2", // Bintray subject (user or organization)
         "desc": "I was pushed completely automatically",
