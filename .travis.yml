@@ -5,8 +5,8 @@ env:
   - REPO_DIR=ecell4
   matrix:
   - VERSION=2.7.10
-  - VERSION=3.3.5
-  - VERSION=3.4.3
+#   - VERSION=3.3.5
+#   - VERSION=3.4.3
   - VERSION=3.5.0
 install:
   - source terryfy/travis_tools.sh
