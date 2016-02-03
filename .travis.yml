@@ -21,6 +21,7 @@ install:
   - brew upgrade cmake
   #- brew upgrade boost
   - brew install gsl
+  - brew install homebrew/versions/boost155
   - brew install homebrew/science/hdf5
   - cd $REPO_DIR
   - cmake .
