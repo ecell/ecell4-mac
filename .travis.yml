@@ -35,8 +35,14 @@ install:
   - delocate-addplat --rm-orig -x 10_9 -x 10_10 dist/*.whl
   - pip install dist/*.whl
   - cd ../..
+
 deploy:
-  provider: bintray
-  file: "desc"
-  user: kozo2
-  key: 0e02f343d46971b18612f41c000f719bd820144b
+  provider: releases
+  api_key:
+    secure: Oz0EVQ0VDKNhE4k7dr+plJvUZwN6pkfYGOXOKUCRIjtA+MLKx3lY5++83F72nKqF6Y1ud6N7Fu/dAUzslcXZIKJ/fQ25bzRc6FfUEFFkS0DmqZTQY2i1S0s+li8J4u9LGPQndVRUg7Z4IXkcyVnogtnYdmjuwfC1h5njIShiR6LUj9nIC4WpSK1IXrH1IhV0sGxr3WynmYp7H5tbAuZ1hUnG5YQ3T0eOoD6HaNo0kRdnCMPRebJ16YrbZ2rBcHMYu2WQM36awxQfNDyV8w/4iRVL/2knRd9eDXrKkv2TsUcD0ZoSz6iuGwBRxkIZLL9nDJIW+QXM6TJdwTfPKynR/vj/fp+V4wN+vFsvM7mQIVfzhh6hbIbPBdFDtClKz7Tj6ekmDOQvTfC+Auqxzq9Q9lQKEkFxhDNGZvjtze9/2qjktKhD8Hl0oDEcUMeAYRgIk/x1e/Ro7fWJTDPoQW4jPTlhJKCddrXF5+RxyoNqx1VF65bgrSfTSNaqkZvlRQTg9y1xloaiV7jHnNDuZG3NQ2qweDiqEiHro2+KXef7FOtHguPEsnSgqnSkzd50q8eklAZn2elYWRBqLQ0FQFdYxlXGhClxiuiU1zL6JgppDNM1QLUDgCPePlMhJtx/QUVSmfIaGc6r62Z7eMH54ShIZDE0j62GOi+iNUzH0rp+tk0=
+  file_glob: true
+  file: "python/dist/*.whl"
+  skip_cleanup: true
+  overwrite: true
+  on:
+    repo: ecell/ecell4-wheels
