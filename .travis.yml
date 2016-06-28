@@ -35,6 +35,7 @@ install:
   - delocate-addplat --rm-orig -x 10_9 -x 10_10 dist/*.whl
   - pip install dist/*.whl
   - cd ../..
+  - unset CC CXX # reset to default compilation for deploy modules
 
 deploy:
   provider: releases
