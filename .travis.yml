@@ -21,10 +21,10 @@ install:
   - brew upgrade cmake
   #- brew upgrade boost
   - brew install gsl
-  - brew install homebrew/versions/boost159
+  - brew install homebrew/versions/boost155
   - brew install homebrew/science/hdf5
   - cd $REPO_DIR
-  - BOOST_INCLUDEDIR=/usr/local/Cellar/boost159/1.59.0/include/ cmake .
+  - cmake .
 #  - make BesselTables
   - cd ..
   - cp config.h $REPO_DIR/ecell4/core
