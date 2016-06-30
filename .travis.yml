@@ -40,14 +40,14 @@ script:
   - python -c "from ecell4 import core"
   - unset CC CXX # reset to default compilation for deploy modules
 
-deploy:
-  provider: pypi
-  user: kozo2
-  password:
-    secure: MrKse0WVELuWuDG8RIAOlxmZBti/8sNsUjUDY7UiGx7WGfrEu3WCJ6/+t2UuLH+eOQqukNFXkfuVf2NfwTjv0ujX+dpfSViDb8tyxh2OC5hH8JvEe+H1EO9uwLVCS6ynsqeOND8bkOGIkxYGzpwYR18Y5T5IcvunckQ$
-  file_glob: true
-  file: ecell4/python/dist/*.whl
-  skip_cleanup: true
-  overwrite: true
-  on:
-    tags: true
+#deploy:
+#  provider: pypi
+#  user: kozo2
+#  password:
+#    secure: MrKse0WVELuWuDG8RIAOlxmZBti/8sNsUjUDY7UiGx7WGfrEu3WCJ6/+t2UuLH+eOQqukNFXkfuVf2NfwTjv0ujX+dpfSViDb8tyxh2OC5hH8JvEe+H1EO9uwLVCS6ynsqeOND8bkOGIkxYGzpwYR18Y5T5IcvunckQ$
+#  file_glob: true
+#  file: ecell4/python/dist/*.whl
+#  skip_cleanup: true
+#  overwrite: true
+#  on:
+#    tags: true
