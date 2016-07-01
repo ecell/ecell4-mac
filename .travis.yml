@@ -1,5 +1,7 @@
-language:
-- objective-c
+#language:
+#- objective-c
+os:
+  - osx
 env:
   global:
   - REPO_DIR=ecell4
