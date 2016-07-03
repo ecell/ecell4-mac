@@ -44,6 +44,9 @@ script:
   - ls
 #  - unset CC CXX # reset to default compilation for deploy modules
 
+after_script:
+  - sleep 30
+
 deploy:
   provider: releases
   api_key:
