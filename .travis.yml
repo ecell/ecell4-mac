@@ -45,7 +45,7 @@ script:
 #  - unset CC CXX # reset to default compilation for deploy modules
 
 after_script:
-  - sleep 30
+  - sleep 300
 
 deploy:
   provider: releases
@@ -61,4 +61,4 @@ deploy:
     tags: true
 
 after_deploy:
-  - sleep 30
+  - sleep 300
