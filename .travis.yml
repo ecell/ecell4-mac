@@ -31,7 +31,7 @@ install:
   - cd ..
   - cp config.h $REPO_DIR/ecell4/core
   - cd $REPO_DIR/python
-  - python setup.py bdist_wheel
+  - python setup.py -q bdist_wheel
   - delocate-listdeps dist/*.whl # lists library dependencies
   - delocate-wheel dist/*.whl # copies library dependencies into wheel
   - delocate-addplat --rm-orig -x 10_9 -x 10_10 dist/*.whl
