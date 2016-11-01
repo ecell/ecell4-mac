@@ -26,12 +26,12 @@ install:
   - brew install homebrew/versions/boost159
   - brew install homebrew/science/hdf5
   - cd $REPO_DIR
-  - BOOST_INCLUDEDIR=/usr/local/opt/boost159/include cmake .
+  - BOOST_INCLUDEDIR=/usr/local/opt/boost159/include cmake -DNO_SHARED:BOOL=1 .
 ##  - make BesselTables
-  - cd ..
-  - cp config.h $REPO_DIR/ecell4/core
-  - cd $REPO_DIR/python
-  - python setup.py bdist_wheel
+##  - cd ..
+##  - cp config.h $REPO_DIR/ecell4/core
+##  - cd $REPO_DIR/python
+##  - python setup.py bdist_wheel
   - delocate-listdeps dist/*.whl # lists library dependencies
   - delocate-wheel dist/*.whl # copies library dependencies into wheel
   - delocate-addplat --rm-orig -x 10_9 -x 10_10 dist/*.whl
