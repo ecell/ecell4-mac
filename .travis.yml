@@ -20,19 +20,15 @@ install:
   - pip install delocate
   - pip install cython
   - brew update
-#  - brew upgrade cmake
-#  #- brew upgrade boost
   - brew install gsl
   - brew install homebrew/versions/boost159
   - brew install homebrew/science/hdf5
   - cd $REPO_DIR
   - BOOST_INCLUDEDIR=/usr/local/opt/boost159/include cmake -DNO_SHARED:BOOL=1 .
   - make
-##  - make BesselTables
-##  - cd ..
-##  - cp config.h $REPO_DIR/ecell4/core
-##  - cd $REPO_DIR/python
-##  - python setup.py bdist_wheel
+  - cd ..
+  - cp config.h $REPO_DIR/ecell4/core
+  - cd $REPO_DIR
   - delocate-listdeps python/dist/*.whl # lists library dependencies
   - delocate-wheel python/dist/*.whl # copies library dependencies into wheel
   - delocate-addplat --rm-orig -x 10_9 -x 10_10 python/dist/*.whl
