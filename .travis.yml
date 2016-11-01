@@ -20,7 +20,7 @@ install:
   - pip install delocate
   - pip install cython
   - brew update
-  - brew upgrade cmake
+#  - brew upgrade cmake
 #  #- brew upgrade boost
   - brew install gsl
   - brew install homebrew/versions/boost159
