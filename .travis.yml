@@ -13,7 +13,7 @@ install:
   - get_python_environment macpython $VERSION venv
 #  # Update to latest wheel package for Python 3.6
   - pip install -U wheel delocate cython
-  - brew update; brew install gsl homebrew/versions/boost159 homebrew/science/hdf5
+  - brew update; brew install gsl homebrew/science/hdf5
   - cd $REPO_DIR; BOOST_INCLUDEDIR=/usr/local/opt/boost159/include cmake -DPYTHON_EXECUTABLE:FILEPATH=/usr/local/bin/python3 -DNO_SHARED:BOOL=1 .
   - cd ..; cp config.h $REPO_DIR/ecell4/core; cd $REPO_DIR
   - make > /dev/null
