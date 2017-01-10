@@ -6,15 +6,12 @@ env:
   global:
   - REPO_DIR=ecell4
   matrix:
-  - VERSION=2.7.11
-#   - VERSION=3.3.5
-#   - VERSION=3.4.3
-  - VERSION=3.5.1
+  - VERSION=3.6.0
 install:
   - source terryfy/travis_tools.sh
   - export CC=clang; export CXX=clang++
   - get_python_environment macpython $VERSION venv
-#  # Update to latest wheel package for Python 3.5
+#  # Update to latest wheel package for Python 3.6
   - pip install -U wheel delocate cython
   - brew update; brew install gsl homebrew/versions/boost159 homebrew/science/hdf5
   - cd $REPO_DIR; BOOST_INCLUDEDIR=/usr/local/opt/boost159/include cmake -DNO_SHARED:BOOL=1 .
@@ -22,7 +19,7 @@ install:
   - make > /dev/null
   - delocate-listdeps python/dist/*.whl # lists library dependencies
   - delocate-wheel python/dist/*.whl # copies library dependencies into wheel
-  - delocate-addplat --rm-orig -x 10_9 -x 10_10 python/dist/*.whl
+#  - delocate-addplat --rm-orig -x 10_9 -x 10_10 python/dist/*.whl
   - pip install python/dist/*.whl
   - cd ../..
 
