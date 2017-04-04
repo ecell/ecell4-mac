@@ -1,6 +1,0 @@
-[submodule "terryfy"]
-	path = terryfy
-	url = git://github.com/MacPython/terryfy.git
-[submodule "ecell4"]
-	path = ecell4
-	url = git://github.com/ecell/ecell4.git
