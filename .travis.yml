@@ -2,15 +2,10 @@
 #- objective-c
 os:
   - osx
-env:
-  global:
-  - REPO_DIR=ecell4
-  matrix:
-  - VERSION=v4.1.1
 install:
   - brew update; brew upgrade; brew install python3 gsl homebrew/science/hdf5@1.8
   - pip3 install -U pip wheel delocate cython
-  - git clone -b '$VERSION' --single-branch --depth 1 git://github.com/ecell/ecell4
+  - git clone -b v4.1.1 --single-branch --depth 1 git://github.com/ecell/ecell4
   - cd $REPO_DIR; cmake -DPYTHON_EXECUTABLE:FILEPATH=/usr/local/bin/python3 -DNO_SHARED:BOOL=1 .
   - delocate-listdeps python/dist/*.whl # lists library dependencies
   - delocate-wheel python/dist/*.whl # copies library dependencies into wheel
