@@ -9,11 +9,11 @@ install:
   - cp /usr/local/Cellar/hdf5\@1.8/1.8.18/include/* /usr/local/include/
   - cp /usr/local/Cellar/hdf5\@1.8/1.8.18/lib/* /usr/local/lib/
   - cd ecell4 && cmake -DPYTHON_EXECUTABLE:FILEPATH=/usr/local/bin/python3 -DNO_SHARED:BOOL=1 . && make
+  - rm -f CMakeCache.txt && cmake -DPYTHON_EXECUTABLE:FILEPATH=/usr/bin/python -DNO_SHARED:BOOL=1 . && make
   - delocate-listdeps python/dist/*.whl # lists library dependencies
   - delocate-wheel python/dist/*.whl # copies library dependencies into wheel
+  - delocate-listdeps python/dist/*.whl # lists library dependencies
 #  - delocate-addplat --rm-orig -x 10_9 -x 10_10 python/dist/*.whl
-  - pip install python/dist/*.whl
-  - cd ../..
 
 script:
 #  - python -c "from ecell4 import core"
