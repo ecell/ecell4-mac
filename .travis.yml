@@ -1,6 +1,4 @@
-os:
-  - osx
-
+os: osx
 language: generic
   
 install:
