@@ -7,8 +7,8 @@ install:
 #  - /usr/local/bin/python2 -m pip install -U pip wheel cython
 #  - git clone -b v4.1.2 --single-branch --depth 1 git://github.com/ecell/ecell4
   - git clone --single-branch --depth 1 git://github.com/ecell/ecell4
-  - cp /usr/local/Cellar/hdf5\@1.8/1.8.19/include/* /usr/local/include/
-  - cp /usr/local/Cellar/hdf5\@1.8/1.8.19/lib/* /usr/local/lib/
+  - cp /usr/local/Cellar/hdf5\@1.8/1.8.20/include/* /usr/local/include/
+  - cp /usr/local/Cellar/hdf5\@1.8/1.8.20/lib/* /usr/local/lib/
   - cd ecell4 && git submodule init && git submodule update && cmake -DPYTHON_EXECUTABLE:FILEPATH=/usr/local/bin/python3 -DNO_SHARED:BOOL=1 . && make
 #  - rm -f CMakeCache.txt && cmake -DPYTHON_EXECUTABLE:FILEPATH=/usr/local/bin/python2 -DNO_SHARED:BOOL=1 . && make
   - delocate-listdeps python/dist/*.whl
