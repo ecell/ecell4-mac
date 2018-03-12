@@ -2,7 +2,7 @@ os: osx
 language: generic
   
 install:
-  - brew update && brew install boost cmake python3 gsl hdf5@1.8
+  - brew update && brew install boost cmake python gsl hdf5@1.8
   - /usr/local/bin/python3 -m pip install -U pip wheel delocate cython
 #  - /usr/local/bin/python2 -m pip install -U pip wheel cython
 #  - git clone -b v4.1.2 --single-branch --depth 1 git://github.com/ecell/ecell4
