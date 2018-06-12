@@ -2,7 +2,7 @@ os: osx
 language: generic
   
 install:
-  - brew update && brew install boost cmake python gsl hdf5@1.8
+  - brew update && brew upgrade boost cmake python && brew install gsl hdf5@1.8
   - /usr/local/bin/python3 -m pip install -U pip wheel delocate cython
   - git clone --single-branch --depth 1 git://github.com/ecell/ecell4
   - cp /usr/local/Cellar/hdf5\@1.8/1.8.20/include/* /usr/local/include/
