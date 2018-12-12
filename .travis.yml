@@ -2,11 +2,9 @@ os: osx
 language: generic
   
 install:
-  - brew update && brew upgrade boost cmake python && brew cask uninstall oclint && brew install gsl hdf5@1.8
+  - brew update && brew upgrade boost cmake python && brew cask uninstall oclint && brew install gsl hdf5
   - /usr/local/bin/python3 -m pip install -U pip wheel delocate cython
-  - git clone --single-branch --depth 1 git://github.com/ecell/ecell4
-  - cp /usr/local/opt/hdf5\@1.8/include/* /usr/local/include/
-  - cp /usr/local/opt/hdf5\@1.8/lib/* /usr/local/lib/
+  - git clone -b v4.2 git://github.com/ecell/ecell4
   - cd ecell4 && git submodule init && git submodule update && cmake -DPYTHON_EXECUTABLE:FILEPATH=/usr/local/bin/python3 -DNO_SHARED:BOOL=1 . && make
   - delocate-listdeps python/dist/*.whl
   - delocate-wheel python/dist/*.whl
