@@ -4,8 +4,9 @@ language: generic
 install:
   - brew update && brew upgrade boost cmake python && brew install gsl hdf5
   - /usr/local/bin/python3 -m pip install -U pip wheel delocate cython
-  - git clone -b v4.2 git://github.com/ecell/ecell4
-  - cd ecell4 && git submodule init && git submodule update && cmake -DPYTHON_EXECUTABLE:FILEPATH=/usr/local/bin/python3 -DNO_SHARED:BOOL=1 . && make
+  - git clone git://github.com/ecell/ecell4 && cd ecell4
+  - git checkout 11d56045a5249443137f97d1f958c166983e77cd
+  - git submodule init && git submodule update && cmake -DPYTHON_EXECUTABLE:FILEPATH=/usr/local/bin/python3 -DNO_SHARED:BOOL=1 . && make
   - delocate-listdeps python/dist/*.whl
   - delocate-wheel python/dist/*.whl
   - delocate-listdeps python/dist/*.whl
