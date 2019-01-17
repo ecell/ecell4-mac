@@ -11,6 +11,8 @@ install:
   - delocate-wheel python/dist/*.whl
   - delocate-listdeps python/dist/*.whl
   - delocate-addplat --rm-orig -x 10_9 -x 10_10 python/dist/*.whl
+  - cd ..
+  - ./fix_libraries.sh
 
 script:
   - pwd
