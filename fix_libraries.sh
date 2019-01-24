@@ -7,6 +7,7 @@ readonly pattern='\(libicu[a-z0-9]*\.[0-9]*\)\.\([0-9]*\)\.dylib'
 readonly wheel=$(ls *.whl)
 unzip $wheel
 
+echo "Fixing ..."
 for dylib in $(ls ecell4/.dylibs/libicu*.dylib); do
     change_option=$(basename "$dylib" | grep -e "$pattern" | sed -e "s:^${pattern}$:@loader_path/\1.dylib @loader_path/\1.\2.dylib:g")
     echo "change_option = $change_option"
@@ -15,6 +16,10 @@ for dylib in $(ls ecell4/.dylibs/libicu*.dylib); do
     done
 done
 
-readonly files=$(ls -d ecell*)
-readonly tmp=$(mktemp).zip
-zip -r $tmp $files && rm -rf $wheel $files && mv $tmp $wheel
+echo "Checking ..."
+for dylib in $(ls ecell4/.dylibs/lib*.dylib); do
+  otool -L $dylib
+done
+
+rm -rf $wheel
+zip -r $wheel $(ls -d ecell*)
