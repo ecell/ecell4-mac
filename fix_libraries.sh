@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cd ecell4/python/dist
+cd ecell4-base/python/dist
 
 readonly pattern='\(libicu[a-z0-9]*\.[0-9]*\)\.\([0-9]*\)\.dylib'
 
