@@ -23,7 +23,7 @@ deploy:
   api_key:
     secure: QiNZZTpdG378vLCWGXdDsJEx1S2T9ozLlzyinABVW9wv8OCL5F0WptAEv8iACcilovtYtPAZAimbj44meQiRFItky6dR1IgY0BiSFtiZrfZ+lfPoJQpFXqaqElwJUJkfINtuD77PD8Oz//H6jLlWRwMu02yIUSjkAH/PefZQCcyTMvovB5HI6kEdEltx6Kb8og9PdGsl71Z2gsMKGxV68RqtLxtPzqWcex2fZsEuoQ9N4ohoCvVAVgH7/14YKRPDiJ5ukyI0/Q3BSHvxHZMuYU0qKkujTGo9c7yBDeKtKfaeca3CfjOqXQKnpG7ujnxBSbF/4Oodf2Y4dxKMk6hxi8ukjxaa3/Viwj1dntNTpscyY6UWLIyg69+xg2pilPU8T0Sv6tqpdtcePl8Q/iGBYBBH81C1b03IMxBHylQ/aPnhfYDCOflyQqDoAOac0Ztd1ldMiAH1w6meOlY2Q+FcAkPWml3arB7LMA96curYIYYDQvqaHuiJgJ+UO/Jub+Y7+5vJpL3BrZKCLdavej8oaGVrLomW5rrbvIGmdY9NHHFecCcvUTtBUgKgRld6XUMJlLWXylqvH2knzU9osdOYExaoVHY1F+JDlS1pUnLZUChWKMuk/bJ4KIjCbp5ISksupSoS7Lmjw37/alE894CB+vp367uPH69uzJ1+6VQrZNM=
   file_glob: true
-  file: "python/dist/*.whl"
+  file: "ecell4-base/python/dist/*.whl"
   skip_cleanup: true
   overwrite: true
   on:
