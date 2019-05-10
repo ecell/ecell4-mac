@@ -4,7 +4,7 @@ readonly package=ecell4_base
 readonly pattern='\(libicu[a-z0-9]*\.[0-9]*\)\.\([0-9]*\)\.dylib'
 
 readonly cwd=$(pwd)
-readonly wheel=${cwd}/$(ls ecell4-base/python/dist/*.whl)
+readonly wheel=${cwd}/$(ls ecell4-base/dist/*.whl)
 readonly tmpdir=$(mktemp -d)
 
 cd ${tmpdir}
